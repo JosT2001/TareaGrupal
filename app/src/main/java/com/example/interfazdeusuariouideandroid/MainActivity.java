@@ -1,12 +1,16 @@
 package com.example.interfazdeusuariouideandroid;
 
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,5 +24,15 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+    }
+    public void clickbBotonGuardar(View view) {
+        TextInputLayout idNombre = findViewById(R.id.idNombre);
+        TextInputLayout idTelefono = findViewById(R.id.idTelefono);
+        TextInputEditText txtTelefono = findViewById(R.id.txtTelefono);
+        String Telefono = txtTelefono.getText().toString();
+        if (Telefono.equals("") || Telefono.length()!=10){
+            idTelefono.setError("ingrese una cedula valida");
+        }else
+            idTelefono.setError("");
     }
 }
