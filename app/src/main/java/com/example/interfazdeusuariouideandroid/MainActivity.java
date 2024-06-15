@@ -27,12 +27,39 @@ public class MainActivity extends AppCompatActivity {
     }
     public void clickbBotonGuardar(View view) {
         TextInputLayout idNombre = findViewById(R.id.idNombre);
+        TextInputEditText txtNombre = findViewById(R.id.txtNombre);
+        String Nombre = txtNombre.getText().toString();
+        if (Nombre.equals("") || Nombre.length() > 150) {
+            idNombre.setError("Ingrese un nombre válido");
+        } else {
+            idNombre.setHelperText("Ingresado Correctamente");
+        }
+
+        TextInputLayout idApellido = findViewById(R.id.idApellido);
+        TextInputEditText txtApellido = findViewById(R.id.txtApellido);
+        String Apellido = txtApellido.getText().toString();
+        if (Apellido.equals("") || Apellido.length() > 150) {
+            idApellido.setError("Ingrese un Apellido válido");
+        } else {
+            idApellido.setHelperText("Ingresado Correctamente");
+        }
+
+        TextInputLayout idEmpresa = findViewById(R.id.idEmpresa);
+        TextInputEditText txtEmpresa = findViewById(R.id.txtEmpresa);
+        String Empresa = txtApellido.getText().toString();
+        if (Empresa.equals("") || Empresa.length() > 150) {
+            idEmpresa.setError("Ingrese un nombre de Empresa válido");
+        } else {
+            idEmpresa.setHelperText("Ingresado Correctamente");
+        }
+
+
         TextInputLayout idTelefono = findViewById(R.id.idTelefono);
         TextInputEditText txtTelefono = findViewById(R.id.txtTelefono);
         String Telefono = txtTelefono.getText().toString();
         if (Telefono.equals("") || Telefono.length()!=10){
             idTelefono.setError("ingrese una cedula valida");
         }else
-            idTelefono.setError("");
+            idTelefono.setHelperText("Ingresado Correctamente");
     }
 }
