@@ -7,6 +7,8 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/FABfoto"
         android:layout_width="wrap_content"
@@ -50,11 +52,12 @@
                     android:id="@+id/idCorreo"
                     android:layout_width="310dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
                     app:counterEnabled="true"
                     app:counterMaxLength="100"
                     app:layout_constraintEnd_toEndOf="@+id/idTelefono"
-                    app:layout_constraintStart_toStartOf="@+id/idTelefono"
-                    app:layout_constraintTop_toBottomOf="@+id/idTelefono">
+                    app:layout_constraintStart_toStartOf="@+id/menu"
+                    app:layout_constraintTop_toBottomOf="@+id/menu">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/txtCorreo"
@@ -165,6 +168,25 @@
                     app:layout_constraintTop_toTopOf="@+id/idTelefono"
                     app:srcCompat="@drawable/ic_telefono" />
 
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/menu"
+                    style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="220dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Seleccione una opción"
+                    app:layout_constraintStart_toStartOf="@+id/idTelefono"
+                    app:layout_constraintTop_toBottomOf="@id/idTelefono">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/actvLista"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="Seleccione una opción"
+                        android:hint="Seleccione una opción"
+                        android:importantForAccessibility="yes"
+                        android:inputType="none" />
+                </com.google.android.material.textfield.TextInputLayout>
+
                 <ImageView
                     android:id="@+id/imageView4"
                     android:layout_width="wrap_content"
@@ -175,9 +197,11 @@
                     app:layout_constraintTop_toTopOf="@+id/idCorreo"
                     app:srcCompat="@drawable/ic_correo" />
 
+
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
     </ScrollView>
+
 
     <TextView
         android:id="@+id/textView2"
@@ -208,5 +232,7 @@
         android:text="Guardar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

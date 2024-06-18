@@ -2,7 +2,10 @@ package com.example.interfazdeusuariouideandroid;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,6 +32,26 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        // Paso 1: Datos
+        String[] datos = new String[]{"Fijo", "Movil"};
+
+// Paso 2: Crear el adaptador
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
+                android.R.layout.simple_dropdown_item_1line, datos);
+
+// Paso 3: Asignar el adaptador
+        AutoCompleteTextView textView = findViewById(R.id.actvLista);
+        textView.setAdapter(adapter);
+
+// Asegúrate de que el adaptador no esté vacío
+        if (textView.getAdapter() == null || textView.getAdapter().isEmpty()) {
+            Log.e("AutoCompleteTextView", "Adapter is null or empty");
+        } else {
+            // Establecer un texto por defecto para asegurar que hay texto disponible
+            textView.setText("Fijo", false);
+        }
+
+
     }
     public void clickbBotonGuardar(View view) {
         // Validación de campos
