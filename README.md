@@ -9,9 +9,18 @@ Cristhian Ortega
 <img src="captura1.png" width="200" height="400">
 ----------<br>
 ----------
-<img src="captura2.png" width="200" height="4>
+<img src="captura2.png" width="200" height="400">
 ----------<br>
 ----------
-<img src="captura3.png" width="200" height="4>
+<img src="captura3.png" width="200" height="400">
 ----------<br>
+----------
+<img src="cap3.png" width="200" height="400">
+----------<br>
+----------
+<img src="cap4.png" width="200" height="400">
+----------<br>
+<img src="cap5.png" width="200" height="400">
+----------<br>
+----------
 ----------
